@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Парсер игровых стримов</title>
+
+    {% load bootstrap4 %}
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+
+    {% bootstrap_messages %}
+
+    <script type="text/javascript">
+            function download() {
+                base_url = window.location.origin;
+                url = base_url + '/download';
+                window.open(url);
+            }
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row align-items-start justify-content-center">
+        <div class="col-sm">
+            <h1>Парсинг игровых стримов</h1>
+            <div class="form-group">
+                <form method="POST" enctype="multipart/form-data" class="form">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    {% buttons %}
+                    <p>Последний запрос: <span class="font-italic">{{last_query}}</span></p>
+                    <button type="submit" class="btn btn-primary" name="parsing">Запустить парсинг</button>
+                    <button type="button" class="btn btn-outline-secondary" onclick="download()">Скачать данные</button>
+                    {% endbuttons %}
+                </form>
+            </div>
+            <div class="form-group">
+                <form method="POST" enctype="multipart/form-data" class="form">
+                    {% csrf_token %}
+                    {% bootstrap_form wordForm %}
+                    {% buttons %}
+                    <button type="submit" class="btn btn-success" name="keywords">Добавить слова</button>
+                    {% endbuttons %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

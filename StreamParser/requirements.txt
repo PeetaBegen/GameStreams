@@ -1,0 +1,16 @@
+asgiref==3.2.7
+beautifulsoup4==4.9.0
+DAWG==0.8.0
+DAWG-Python==0.7.2
+Django==3.0.6
+django-bootstrap4==1.1.1
+docopt==0.6.2
+numpy==1.18.4
+pymorphy2==0.8
+pymorphy2-dicts==2.4.393442.3710985
+python-twitch-stream==1.0.2
+pytz==2020.1
+selenium==3.141.0
+soupsieve==2.0
+sqlparse==0.3.1
+urllib3==1.25.8
